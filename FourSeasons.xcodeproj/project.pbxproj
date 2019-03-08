@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		50567162EEAF23D9E1AE17B7 /* Pods_FourSeasons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF35D54C950D447D16EA34DD /* Pods_FourSeasons.framework */; };
 		B1E72708220EB40E00DFF013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E72707220EB40E00DFF013 /* AppDelegate.swift */; };
-		B1E7270A220EB40E00DFF013 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E72709220EB40E00DFF013 /* ViewController.swift */; };
+		B1E7270A220EB40E00DFF013 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E72709220EB40E00DFF013 /* WeatherController.swift */; };
 		B1E7270D220EB40E00DFF013 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E7270B220EB40E00DFF013 /* Main.storyboard */; };
 		B1E7270F220EB41000DFF013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1E7270E220EB41000DFF013 /* Assets.xcassets */; };
 		B1E72712220EB41000DFF013 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E72710220EB41000DFF013 /* LaunchScreen.storyboard */; };
+		B1E7271A220EB64400DFF013 /* CityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E72719220EB64400DFF013 /* CityController.swift */; };
+		B1E72720220EB71600DFF013 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E7271F220EB71600DFF013 /* WeatherData.swift */; };
+		B1E72724220EFCFF00DFF013 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E72723220EFCFF00DFF013 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,11 +23,14 @@
 		615C073887831E29CA4F3E29 /* Pods-FourSeasons.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourSeasons.debug.xcconfig"; path = "Target Support Files/Pods-FourSeasons/Pods-FourSeasons.debug.xcconfig"; sourceTree = "<group>"; };
 		B1E72704220EB40E00DFF013 /* FourSeasons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourSeasons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E72707220EB40E00DFF013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B1E72709220EB40E00DFF013 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B1E72709220EB40E00DFF013 /* WeatherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
 		B1E7270C220EB40E00DFF013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1E7270E220EB41000DFF013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1E72711220EB41000DFF013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1E72713220EB41000DFF013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1E72719220EB64400DFF013 /* CityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityController.swift; sourceTree = "<group>"; };
+		B1E7271F220EB71600DFF013 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		B1E72723220EFCFF00DFF013 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		FF35D54C950D447D16EA34DD /* Pods_FourSeasons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FourSeasons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -69,14 +75,49 @@
 		B1E72706220EB40E00DFF013 /* FourSeasons */ = {
 			isa = PBXGroup;
 			children = (
-				B1E72707220EB40E00DFF013 /* AppDelegate.swift */,
-				B1E72709220EB40E00DFF013 /* ViewController.swift */,
+				B1E7271C220EB68500DFF013 /* Model */,
+				B1E7271B220EB67D00DFF013 /* View */,
+				B1E7271D220EB69000DFF013 /* Controller */,
+				B1E7271E220EB69D00DFF013 /* Supporting Files */,
+			);
+			path = FourSeasons;
+			sourceTree = "<group>";
+		};
+		B1E7271B220EB67D00DFF013 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				B1E7270B220EB40E00DFF013 /* Main.storyboard */,
+				B1E72723220EFCFF00DFF013 /* UIView+Extension.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B1E7271C220EB68500DFF013 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B1E7271F220EB71600DFF013 /* WeatherData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B1E7271D220EB69000DFF013 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B1E72709220EB40E00DFF013 /* WeatherController.swift */,
+				B1E72719220EB64400DFF013 /* CityController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B1E7271E220EB69D00DFF013 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B1E72707220EB40E00DFF013 /* AppDelegate.swift */,
 				B1E7270E220EB41000DFF013 /* Assets.xcassets */,
 				B1E72710220EB41000DFF013 /* LaunchScreen.storyboard */,
 				B1E72713220EB41000DFF013 /* Info.plist */,
 			);
-			path = FourSeasons;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C6CB967B1C98AF4E0932641B /* Pods */ = {
@@ -85,7 +126,6 @@
 				615C073887831E29CA4F3E29 /* Pods-FourSeasons.debug.xcconfig */,
 				24C6EAF4D839915E94CB1C68 /* Pods-FourSeasons.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,7 +253,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1E7270A220EB40E00DFF013 /* ViewController.swift in Sources */,
+				B1E7271A220EB64400DFF013 /* CityController.swift in Sources */,
+				B1E7270A220EB40E00DFF013 /* WeatherController.swift in Sources */,
+				B1E72720220EB71600DFF013 /* WeatherData.swift in Sources */,
+				B1E72724220EFCFF00DFF013 /* UIView+Extension.swift in Sources */,
 				B1E72708220EB40E00DFF013 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,7 +406,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7XAGB7UHD;
-				INFOPLIST_FILE = FourSeasons/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FourSeasons/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -382,7 +425,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7XAGB7UHD;
-				INFOPLIST_FILE = FourSeasons/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FourSeasons/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
